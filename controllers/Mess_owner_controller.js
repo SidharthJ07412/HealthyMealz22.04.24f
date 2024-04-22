@@ -145,7 +145,6 @@ export const View_mess_users = async (req, res) => {
   };
 
   export const remove_agent = async (req, res) => {
-
     const {Mess_id} = req.body;
     let exists;
     try {
@@ -154,7 +153,7 @@ export const View_mess_users = async (req, res) => {
     } catch (err) {
       console.log(err);
     }
-    res.status(200);
+    res.status(200).send("removed");
   };
 
 
@@ -168,7 +167,7 @@ export const View_mess_users = async (req, res) => {
     } catch (err) {
       console.log(err);
     }
-    res.status(200);
+    res.status(200).send("send");
   };
 
   export const update_menu = async (req, res) => {
