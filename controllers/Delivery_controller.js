@@ -70,12 +70,11 @@ export const fetch_hire_requests = async (req, res) => {
     let exists;
     try {
         // console.log("ckjsbsiucbsikjcbsjkcbsjbcjocbojsbcojbc"+ deliver_id);
-        exists = await client.query("select mess_id from Request where agent_id=$1",[deliver_id]);
+        exists = await client.query("select mess_id from Request where agent_id=$1 and status ='Hired'",[deliver_id]);
         // console.log("ckjsbsiucbsikjcbsjkcbsjbcjocbojsbcojbc"+ exists.rows[0]);
       } catch (err) {
         console.log(err);
       }
-
     res.send(exists.rows[0]);
   };
 

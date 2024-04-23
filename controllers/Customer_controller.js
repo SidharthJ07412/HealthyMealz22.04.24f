@@ -2,8 +2,6 @@ import client from "../db.js";
 import Razorpay from "razorpay";
 import crypto from "crypto";
 
-
-
 export const order = async(req,res) => {
 
     // check if subscription already exist
