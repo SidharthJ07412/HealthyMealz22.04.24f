@@ -150,7 +150,7 @@ export const View_mess_users = async (req, res) => {
     let exists;
     try {
       await client.query("DELETE FROM request WHERE mess_id=$1 and agent_id= $2",
-      [Mess_id][current_agent]);
+      [Mess_id,current_agent]);
     } catch (err) {
       console.log(err);
     }
