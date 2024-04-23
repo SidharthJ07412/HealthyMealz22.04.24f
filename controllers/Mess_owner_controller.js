@@ -146,16 +146,18 @@ export const View_mess_users = async (req, res) => {
   
   export const remove_agent = async (req, res) => {
 
-    const {Mess_id,current_agent} = req.body;
+    const {Mess_id} = req.body;
+    console.log(Mess_id);
     let exists;
     try {
-      await client.query("DELETE FROM request WHERE mess_id=$1 and agent_id= $2",
-      [Mess_id,current_agent]);
+      await client.query("DELETE FROM request WHERE mess_id=$1 and status='Hired' ",
+      [Mess_id]);
     } catch (err) {
       console.log(err);
     }
     res.status(200).send("remove");
   };
+
 
 
   export const send_request = async (req, res) => {
