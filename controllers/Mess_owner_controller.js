@@ -200,7 +200,6 @@ export const View_mess_users = async (req, res) => {
   };
 
   export const fetch_menu = async (req, res) => {
-
     const {User_id} = req.body;
     let exists;
     try {

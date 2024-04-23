@@ -26,7 +26,7 @@ export const createUser = async (req, res) => {
         Password
       ])
       console.log(newUser.rows[0]);
-      res.status(200).send(newUser.rows[0]);
+      res.status(200).send("You are SuccessFully Registred");
     } catch (err) {
       console.log(err);
     }

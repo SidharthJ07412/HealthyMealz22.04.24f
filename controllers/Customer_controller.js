@@ -167,11 +167,11 @@ export const View_mess = async (req, res) => {
     console.log("shdjkfhkdjfsd");
     
     // Check if current time is between 10 am to 1 pm (10 - 13)
-    if (currentHour >= 9 && currentHour < 12) {
-      return res.status(400).send("Tokens cannot be updated between 10 am to 12 pm.");
+    if (currentHour >= 4 && currentHour < 7) {
+      return res.status(400).send("Tokens cannot be updated between 9:30 AM to 12:30 PM.");
     }
-    else if(currentHour >= 17 && currentHour < 19){
-      return res.status(400).send("Tokens cannot be updated between 5 pm to 7 pm.");
+    else if(currentHour >= 12 && currentHour < 14){
+      return res.status(400).send("Tokens cannot be updated between 5:30 pm to 7:30 PM.");
     }
 
     const { customer_id,Mess_id,Daily_tokens} = req.body;
