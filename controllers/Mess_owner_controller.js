@@ -136,7 +136,7 @@ export const View_mess_users = async (req, res) => {
     const {Mess_id} = req.body;
     let exists;
     try {
-      exists = await client.query("select * from request inner join users on users.user_id=request.agent_id  where request.mess_id=$1 and request.status='Hired'",
+      exists = await client.query("select * from request inner join users on users.user_id =  request.agent_id  where request.mess_id=$1 and request.status='Hired'",
       [Mess_id]);
     } catch (err) {
       console.log(err);
@@ -212,6 +212,3 @@ export const View_mess_users = async (req, res) => {
     res.status(200).send(exists.rows[0]);
   };
 
-
-
-  
